@@ -6,6 +6,11 @@ h1 {
 	text-align: center;
 }
 
+blockquote {
+	font-style: italic;
+	text-align: center;
+}
+
 .strike {
 	text-decoration: line-through;
 }
