@@ -11,6 +11,14 @@ blockquote {
 	text-align: center;
 }
 
+.logo {
+	text-align: center;
+}
+
+.logo img {
+	height: 128px;
+}
+
 .strike {
 	text-decoration: line-through;
 }

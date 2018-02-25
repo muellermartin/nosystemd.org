@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="80.231743mm"
+   height="80.231743mm"
+   viewBox="0 0 284.2857 284.2857"
+   id="svg4715"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="nosystemd.svg">
+  <defs
+     id="defs4717" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="80.666758"
+     inkscape:cy="311.89653"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1440"
+     inkscape:window-height="776"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4720">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-170.71429,-348.7908)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="213.96921"
+       y="502.62311"
+       id="text5263"
+       sodipodi:linespacing="100%"
+       inkscape:export-xdpi="162.09045"
+       inkscape:export-ydpi="162.09045"><tspan
+         sodipodi:role="line"
+         id="tspan5265"
+         x="213.96921"
+         y="502.62311"
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:45px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Ultra-Bold';text-align:start;writing-mode:lr-tb;text-anchor:start">systemd</tspan></text>
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:34.50867081;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path5267"
+       cx="312.85715"
+       cy="490.93365"
+       r="124.88852"
+       inkscape:export-xdpi="162.09045"
+       inkscape:export-ydpi="162.09045" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:26.56365395;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 412.78684,391.00397 212.92746,590.86334 412.78684,391.00397 Z"
+       id="path5269"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="162.09045"
+       inkscape:export-ydpi="162.09045" />
+  </g>
+</svg>
