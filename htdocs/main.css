@@ -19,6 +19,22 @@ blockquote {
 	height: 128px;
 }
 
+.distros {
+	padding: 0;
+}
+
+.distros li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 1em;
+}
+
+.distros li a img {
+	height: 64px;
+	line-height: 64px;
+	vertical-align: middle;
+}
+
 .strike {
 	text-decoration: line-through;
 }
