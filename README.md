@@ -8,4 +8,4 @@ There is also a Python script to check links for their availability (server down
 The easiest way to run this script is via `pipenv`:
 
 1. `pipenv install`
-2. `pipenv run checklinks`
+2. Optional: `pipenv run checklinks` to check for dead links
