@@ -15,17 +15,25 @@
 		<h2>What is systemd?</h2>
 		<p>systemd claims to be a good and modern replacement for SysVinit &dash; a so called init daemon. Usually the init daemon is the first process spawned by the kernel and thus has the <abbr title="Process ID">PID</abbr> #1 and is responsible for spawning other daemons which are necessary for the <abbr title="Operating System">OS</abbr> to operate, e.g. networking, cron, syslog etc.</p>
 
-		<p>List of init daemons:</p>
+		<p>List of init daemons<sup>*</sup>:</p>
 		<ul>
 			<li class="strike">systemd</li>
-			<li>SysVinit</li>
-			<li>OpenRC</li>
-			<li>Upstart</li>
-			<li>InitNG</li>
-			<li>cinit</li>
-			<li>runit</li>
-			<li>minit</li>
+			<li>SysVinit (<a href="http://www.nongnu.org/sysvinit/">home</a>)</li>
+			<li>OpenRC (<a href="https://wiki.gentoo.org/wiki/Project:OpenRC">home</a>)</li>
+			<li>runit (<a href="http://smarden.org/runit/">home</a>)</li>
+			<li>s6 (<a href="https://skarnet.org/software/s6/">home</a>)</li>
+			<li>Shepherd (<a href="https://www.gnu.org/software/shepherd/">home</a>)</li>
+			<li>finit (<a href="https://troglobit.com/projects/finit/">home</a>)</li>
+			<li>Hummingbird (<a href="https://github.com/Sweets/hummingbird">repo</a>)</li>
+			<li>uselessd (<a href="https://bitbucket.org/Tarnyko/uselessd/src">repo</a>; inactive)</li>
+			<li>Upstart (<a href="http://upstart.ubuntu.com">home</a>; inactive)</li>
+			<li>InitNG (<a href="https://github.com/initng/initng">repo</a>; inactive)</li>
+			<li>cinit (<a href="https://www.nico.schottelius.org/software/cinit/">home</a>; inactive)</li>
+			<li>minit (<a href="http://www.fefe.de/minit/">home</a>; inactive)</li>
+			<li>Epoch (<a href="https://universe2.us/epoch.html">home</a>; inactive)</li>
 		</ul>
+
+		<p><sup>*</sup><i>inactive</i>: no development activity for few years</p>
 
 		<h2>What is so bad about systemd?</h2>
 		<p>List of notable bugs and security issues:</p>
@@ -44,6 +52,7 @@
 			<li><a href="https://github.com/systemd/systemd/issues/6478">#6478: `systemctl` should not consider active->failed as a successful operation</a></li>
 			<li><a href="https://github.com/systemd/systemd/issues/6620">#6620: services writing to stdout become silent after journal restart</a></li>
 			<li><a href="https://github.com/systemd/systemd/pull/7184">#7184: resolved: fix loop on packets with pseudo dns types</a> (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15908">CVE-2017-15908</a>)</li>
+			<li><a href="https://github.com/systemd/systemd/issues/8579">#8579: systemd breaks my mouse</a></li>
 			<li><a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1795921">Out-of-Bounds write in systemd-networkd dhcpv6 option handling</a> (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15688">CVE-2018-15688</a>)</li>
 			<li><a href="https://github.com/systemd/systemd/issues/6078#issuecomment-308240231">#6078: Applying systemd-networkd configuration disconnects all other interfaces</a></li>
 			<li><a href="https://www.openwall.com/lists/oss-security/2019/01/09/3">System Down: A systemd-journald exploit (CVE-2018-16864, CVE-2018-16865, and CVE-2018-16866)</a></li>
@@ -53,6 +62,8 @@
 
 		<p>Other issues arising around systemd:</p>
 		<ul>
+			<li><a href="https://github.com/systemd/systemd/pull/15206">systemd will be able to kill a process if he needs/wants more RAM</a></li>
+			<li><a href="https://lists.freedesktop.org/archives/systemd-devel/2010-September/000391.html">We need to enforce the use of systemd to everyone, by the creator of systemd itself.</a></li>
 			<li><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=825394">systemd kill background processes after user logs out</a> (see also: <a href="https://github.com/tmux/tmux/issues/428">[RFE] add a way to run in a new systemd scope automatically</a>)</li>
 			<li><a href="https://www.theregister.co.uk/2017/06/29/systemd_pwned_by_dns_query/">Don't panic, but Linux's Systemd can be pwned via an evil DNS query</a></li>
 			<li><a href="https://isc.sans.edu/forums/diary/Systemd+Could+Fallback+to+Google+DNS/22516/">Systemd Could Fallback to Google DNS?</a></li>
@@ -82,7 +93,7 @@
 			<li><a href="https://www.pclinuxos.com/"><img src="img/pclinuxos.png" alt="PcLinuxOS" /></a></li>
 			<li><a href="https://www.gobolinux.org/"><img src="img/gobolinux.png" alt="Gobo Linux" /></a></li>
 			<li><a href="https://web.obarun.org/"><img src="img/oberun.png" alt="Oberun" /></a></li>
-			<li><a href="https://k1ss.org"><img src="img/kiss.png" alt="KISS Linux" /></a></li>
+			<li><a href="https://k1sslinux.org"><img src="img/kiss.png" alt="KISS Linux" /></a></li>
 			<li><a href="https://project-trident.org/"><img src="img/trident.png" alt="Project Trident" /></a></li>
 			<li><a href="https://liguros.gitlab.io/"><img src="img/liguros_200x200.png" alt="LiGurOS" /></a></li>
 			<li><a href="https://sulinos.github.io"><img src="img/sulinos.svg" alt="SulinOS" /></a></li>
