@@ -9,10 +9,10 @@
 	<body>
 		<h1>No systemd</h1>
 		<div class="logo"><img src="img/nosystemd.png" alt="" /></div>
-		<blockquote>If this is the solution, I want my problem back.</blockquote>
-		<p>This website tries to become a collection of resources pointing out reasons against systemd and what alternatives are available.</p>
+		<blockquote>"If this is the solution, I want my problem back."</blockquote>
+		<p style="margin-top: 50px; display: flex; justify-content: center;width: 100%;">This website tries to become a collection of resources pointing out reasons against systemd and what alternatives are available.</p>
 
-		<h2>What is systemd?</h2>
+		<h2 style="margin-top: 5vh;">What is systemd?</h2>
 		<p>systemd claims to be a good and modern replacement for SysVinit &dash; a so called init daemon. Usually the init daemon is the first process spawned by the kernel and thus has the <abbr title="Process ID">PID</abbr> #1 and is responsible for spawning other daemons which are necessary for the <abbr title="Operating System">OS</abbr> to operate, e.g. networking, cron, syslog etc.</p>
 
 		<p>List of init daemons<sup>*</sup>:</p>
@@ -36,10 +36,10 @@
 			<li>Epoch (<a href="https://universe2.us/epoch.html">home</a>; inactive)</li>
 		</ul>
 
-		<p><sup>*</sup><i>inactive</i>: no development activity for few years</p>
+		<p><sup>*</sup><i>inactive</i>:No development activity has occurred for several years.</p>
 
 		<h2>What is so bad about systemd?</h2>
-		<p>List of notable bugs and security issues:</p>
+		<p style="font-weight: 600;">List of notable bugs and security issues:</p>
 		<ul>
 			<li><a href="https://newsletter.pragmaticengineer.com/p/inside-the-datadog-outage">Datadog outage costing 5 million dollars caused by systemd upgrade</a></li>
 			<li><a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1988119">Widespread outage was caused on Azure, when systemd 237-3ubuntu10.54 was published to the bionic-security pocket (instances could no longer resolve DNS queries, breaking networking)</a></li>
@@ -66,7 +66,7 @@
 			<li><a href="https://github.com/systemd/systemd/issues/2913">#2913: journald is unable to attribute messages incoming from processes that exited to their cgroup, due to /proc vs SCM_CREDS race</a></li>
 		</ul>
 
-		<p>Other issues arising around systemd:</p>
+		<p style="font-weight: 600;">Other issues arising around systemd:</p>
 		<ul>
 			<li><a href="https://github.com/systemd/systemd/pull/15206">systemd will be able to kill a process if he needs/wants more RAM</a></li>
 			<li><a href="https://lists.freedesktop.org/archives/systemd-devel/2010-September/000391.html">We need to enforce the use of systemd to everyone, by the creator of systemd itself.</a></li>
@@ -78,13 +78,13 @@
 		</ul>
 
 		<h2>How do I get rid of systemd?</h2>
-		<p>Free your system by replacing systemd with an alternative init system. Here are a few guides on how to do that:</p>
+		<p style="font-weight: 600;">Free your system by replacing systemd with an alternative init system. Here are a few guides on how to do that:</p>
 
 		<ul>
 			<li><a href="https://wiki.ubuntu.com/SystemdForUpstartUsers#Permanent_switch_back_to_upstart">Ubuntu Wiki: Permanent switch back to upstart</a></li>
 		</ul>
 
-		<p>Alternatively you can use Linux distributions which do not use systemd by default:</p>
+		<p>&dash; Alternatively you can use Linux distributions which do not use systemd by default:</p>
 
 		<ul class="distros">
 			<li><a href="https://devuan.org/"><img src="img/devuan.png" alt="Devuan" /></a></li>
