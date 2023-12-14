@@ -9,6 +9,7 @@ h1 {
 blockquote {
 	font-style: italic;
 	text-align: center;
+	font-weight: 600;
 }
 
 .logo {
@@ -18,7 +19,9 @@ blockquote {
 .logo img {
 	height: 128px;
 }
-
+abbr{
+	text-decoration: underline;
+}
 .distros {
 	padding: 0;
 }
