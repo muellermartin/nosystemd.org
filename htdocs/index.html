@@ -1,153 +1,222 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>No systemd</title>
-		<link rel="stylesheet" href="main.css" />
-	</head>
-	<body>
-		<h1>No systemd</h1>
-		<div class="logo"><img src="img/nosystemd.png" alt="" /></div>
-		<blockquote>"If this is the solution, I want my problem back."</blockquote>
-		<p style="margin-top: 50px; display: flex; justify-content: center;width: 100%;">This website tries to become a collection of resources pointing out reasons against systemd and what alternatives are available.</p>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>No systemd - Resources against systemd and alternatives</title>
+    <meta name="description" content="A collection of resources pointing out reasons against systemd and what alternatives are available. Find Linux distributions without systemd.">
+    <meta name="keywords" content="systemd, init, linux, alternatives, sysvinit, openrc, runit, s6">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/png" href="img/nosystemd.png">
+</head>
+<body>
+    <header>
+        <h1>No systemd</h1>
+        <figure class="logo">
+            <img src="img/nosystemd.png" alt="No systemd logo" width="200" height="200" />
+        </figure>
+        <blockquote cite="https://nosystemd.org">
+            <p>"If this is the solution, I want my problem back."</p>
+        </blockquote>
+        
+        <div class="intro">
+            <p>This website tries to become a collection of resources pointing out reasons against systemd and what alternatives are available.</p>
+        </div>
+    </header>
 
-		<h2 style="margin-top: 5vh;">What is systemd?</h2>
-		<p>systemd claims to be a good and modern replacement for SysVinit &dash; a so called init daemon. Usually the init daemon is the first process spawned by the kernel and thus has the <abbr title="Process ID">PID</abbr> #1 and is responsible for spawning other daemons which are necessary for the <abbr title="Operating System">OS</abbr> to operate, e.g. networking, cron, syslog etc.</p>
+    <nav aria-label="Page sections">
+        <ul class="nav-links">
+            <li><a href="#what-is-systemd">What is systemd?</a></li>
+            <li><a href="#problems">Problems with systemd</a></li>
+            <li><a href="#alternatives">Getting rid of systemd</a></li>
+            <li><a href="#resources">Useful links</a></li>
+        </ul>
+    </nav>
 
-		<p>List of init daemons<sup>*</sup>:</p>
-		<ul>
-			<li class="strike">systemd</li>
-			<li>SysVinit (<a href="http://www.nongnu.org/sysvinit/">home</a>)</li>
-			<li>OpenRC (<a href="https://wiki.gentoo.org/wiki/Project:OpenRC">home</a>)</li>
-			<li>runit (<a href="http://smarden.org/runit/">home</a>)</li>
-			<li>s6 (<a href="https://skarnet.org/software/s6/">home</a>)</li>
-			<li>Shepherd (<a href="https://www.gnu.org/software/shepherd/">home</a>)</li>
-			<li>finit (<a href="https://troglobit.com/projects/finit/">home</a>)</li>
-			<li>Hummingbird (<a href="https://github.com/Sweets/hummingbird">repo</a>)</li>
-			<li>superd (<a href="https://sr.ht/~craftyguy/superd/">repo</a>)</li>
-			<li>31init (<a href="https://gitlab.com/tearch-linux/applications-and-tools/31init">repo</a>)</li>
-			<li>Dinit (<a href="https://github.com/davmac314/dinit">repo</a>)</li>
-			<li>procd (<a href="https://git.openwrt.org/project/procd.git">repo</a>)</li>
-			<li>uselessd (<a href="https://bitbucket.org/Tarnyko/uselessd/src">repo</a>; inactive)</li>
-			<li>Upstart (<a href="http://upstart.ubuntu.com">home</a>; inactive)</li>
-			<li>InitNG (<a href="https://github.com/initng/initng">repo</a>; inactive)</li>
-			<li>cinit (<a href="https://www.nico.schottelius.org/software/cinit/">home</a>; inactive)</li>
-			<li>minit (<a href="http://www.fefe.de/minit/">home</a>; inactive)</li>
-			<li>Epoch (<a href="https://universe2.us/epoch.html">home</a>; inactive)</li>
-		</ul>
+    <main>
+        <section id="what-is-systemd">
+            <h2>What is systemd?</h2>
+            <p>systemd claims to be a good and modern replacement for SysVinit — a so called init daemon. Usually the init daemon is the first process spawned by the kernel and thus has the <abbr title="Process ID">PID</abbr> #1 and is responsible for spawning other daemons which are necessary for the <abbr title="Operating System">OS</abbr> to operate, e.g. networking, cron, syslog etc.</p>
 
-		<p><sup>*</sup><i>inactive</i>: No development activity has occurred for several years.</p>
+            <h3>List of init daemons<sup>*</sup>:</h3>
+            <ul role="list">
+                <li class="strike" aria-label="systemd - not recommended">systemd</li>
+                <li>SysVinit (<a href="http://www.nongnu.org/sysvinit/" rel="external">home</a>)</li>
+                <li>OpenRC (<a href="https://wiki.gentoo.org/wiki/Project:OpenRC" rel="external">home</a>)</li>
+                <li>runit (<a href="http://smarden.org/runit/" rel="external">home</a>)</li>
+                <li>s6 (<a href="https://skarnet.org/software/s6/" rel="external">home</a>)</li>
+                <li>Shepherd (<a href="https://www.gnu.org/software/shepherd/" rel="external">home</a>)</li>
+                <li>finit (<a href="https://troglobit.com/projects/finit/" rel="external">home</a>)</li>
+                <li>Hummingbird (<a href="https://github.com/Sweets/hummingbird" rel="external">repo</a>)</li>
+                <li>superd (<a href="https://sr.ht/~craftyguy/superd/" rel="external">repo</a>)</li>
+                <li>31init (<a href="https://gitlab.com/tearch-linux/applications-and-tools/31init" rel="external">repo</a>)</li>
+                <li>Dinit (<a href="https://github.com/davmac314/dinit" rel="external">repo</a>)</li>
+                <li>procd (<a href="https://git.openwrt.org/project/procd.git" rel="external">repo</a>)</li>
+                <li>uselessd (<a href="https://bitbucket.org/Tarnyko/uselessd/src" rel="external">repo</a>; inactive)</li>
+                <li>Upstart (<a href="http://upstart.ubuntu.com" rel="external">home</a>; inactive)</li>
+                <li>InitNG (<a href="https://github.com/initng/initng" rel="external">repo</a>; inactive)</li>
+                <li>cinit (<a href="https://www.nico.schottelius.org/software/cinit/" rel="external">home</a>; inactive)</li>
+                <li>minit (<a href="http://www.fefe.de/minit/" rel="external">home</a>; inactive)</li>
+                <li>Epoch (<a href="https://universe2.us/epoch.html" rel="external">home</a>; inactive)</li>
+            </ul>
 
-		<h2>What is so bad about systemd?</h2>
-		<p style="font-weight: 600;">List of notable bugs and security issues:</p>
-		<ul>
-			<li><a href="https://newsletter.pragmaticengineer.com/p/inside-the-datadog-outage">Datadog outage costing 5 million dollars caused by systemd upgrade</a></li>
-			<li><a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1988119">Widespread outage was caused on Azure, when systemd 237-3ubuntu10.54 was published to the bionic-security pocket (instances could no longer resolve DNS queries, breaking networking)</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/437">#437: timeX.google.com provide non standard time</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/1143">#1143: PID1 getting stuck printing "systemd[1]: Time has been changed" continuously</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/1312">#1312: restarting systemd service on dependency failure</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/1596">#1596: journalctl -r -n flags incorrectly processed</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/2402">#2402: Mount efivarfs read-only</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/2460">#2460: Showing status of service via systemctl is slow (>10s) if disk journal is used</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/4863">#4863: systemd-journald drops all bytes after '\0'</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/5644">#5644: tmpfiles: R! /dir/.* destroys root</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/6237">#6237: systemd can't handle the process previlege that belongs to user name startswith number, such as 0day</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/6369">#6369: hostnamed does not like fqdns with trailing dots</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/6381">#6381: systemd-cryptsetup: Booting with encrypted root partition fails instantly</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/6478">#6478: `systemctl` should not consider active->failed as a successful operation</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/6620">#6620: services writing to stdout become silent after journal restart</a></li>
-			<li><a href="https://github.com/systemd/systemd/pull/7184">#7184: resolved: fix loop on packets with pseudo dns types</a> (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15908">CVE-2017-15908</a>)</li>
-			<li><a href="https://github.com/systemd/systemd/issues/8579">#8579: systemd breaks my mouse</a></li>
-			<li><a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1795921">Out-of-Bounds write in systemd-networkd dhcpv6 option handling</a> (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15688">CVE-2018-15688</a>)</li>
-			<li><a href="https://github.com/systemd/systemd/issues/6078#issuecomment-308240231">#6078: Applying systemd-networkd configuration disconnects all other interfaces</a></li>
-			<li><a href="https://www.openwall.com/lists/oss-security/2019/01/09/3">System Down: A systemd-journald exploit (CVE-2018-16864, CVE-2018-16865, and CVE-2018-16866)</a></li>
-			<li><a href="https://github.com/systemd/systemd/issues/11810#issuecomment-489727505">#11810: Can't suspend again after suspending one time</a> (<a href="https://twitter.com/FiloSottile/status/1125840275346198529">explanation why this is bad</a>)</li>
-			<li><a href="https://bugs.freedesktop.org/show_bug.cgi?id=72759">Systemd user manager interferes with ecryptfs - private directory not being unmounted</a> (also <a href="https://bugs.launchpad.net/ubuntu/+source/ecryptfs-utils/+bug/313812">umount of ecryptfs does not automatically clear the keyring</a> and <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=765854">ecryptfs-utils: Private directory not automatically unmounted anymore on logout</a>)</li>
-			<li><a href="https://github.com/systemd/systemd/issues/2913">#2913: journald is unable to attribute messages incoming from processes that exited to their cgroup, due to /proc vs SCM_CREDS race</a></li>
-		</ul>
+            <p><sup>*</sup><em>inactive</em>: No development activity has occurred for several years.</p>
+        </section>
 
-		<p style="font-weight: 600;">Other issues arising around systemd:</p>
-		<ul>
-			<li><a href="https://github.com/systemd/systemd/pull/15206">systemd will be able to kill a process if he needs/wants more RAM</a></li>
-			<li><a href="https://lists.freedesktop.org/archives/systemd-devel/2010-September/000391.html">We need to enforce the use of systemd to everyone, by the creator of systemd itself.</a></li>
-			<li><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=825394">systemd kill background processes after user logs out</a> (see also: <a href="https://github.com/tmux/tmux/issues/428">[RFE] add a way to run in a new systemd scope automatically</a>)</li>
-			<li><a href="https://www.theregister.co.uk/2017/06/29/systemd_pwned_by_dns_query/">Don't panic, but Linux's Systemd can be pwned via an evil DNS query</a></li>
-			<li><a href="https://isc.sans.edu/forums/diary/Systemd+Could+Fallback+to+Google+DNS/22516/">Systemd Could Fallback to Google DNS?</a></li>
-			<li><a href="https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1713457">DNS search domain not removed from resolv.conf on disconnect</a></li>
-			<li><a href="https://fredrikaverpil.github.io/blog/2016/04/27/systemd-services-and-resource-limits/">systemd does not respect system wide resource limits</a></li>
-		</ul>
+        <section id="problems">
+            <h2>What is so bad about systemd?</h2>
+            
+            <article>
+                <h3>Notable bugs and security issues:</h3>
+                <ul role="list">
+                    <li><a href="https://newsletter.pragmaticengineer.com/p/inside-the-datadog-outage" rel="external">Datadog outage costing 5 million dollars caused by systemd upgrade</a></li>
+                    <li><a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1988119" rel="external">Widespread outage was caused on Azure, when systemd 237-3ubuntu10.54 was published to the bionic-security pocket (instances could no longer resolve DNS queries, breaking networking)</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/437" rel="external">#437: timeX.google.com provide non standard time</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/1143" rel="external">#1143: PID1 getting stuck printing "systemd[1]: Time has been changed" continuously</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/1312" rel="external">#1312: restarting systemd service on dependency failure</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/1596" rel="external">#1596: journalctl -r -n flags incorrectly processed</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/2402" rel="external">#2402: Mount efivarfs read-only</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/2460" rel="external">#2460: Showing status of service via systemctl is slow (>10s) if disk journal is used</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/4863" rel="external">#4863: systemd-journald drops all bytes after '\0'</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/5644" rel="external">#5644: tmpfiles: R! /dir/.* destroys root</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/6237" rel="external">#6237: systemd can't handle the process privilege that belongs to user name starts with number, such as 0day</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/6369" rel="external">#6369: hostnamed does not like fqdns with trailing dots</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/6381" rel="external">#6381: systemd-cryptsetup: Booting with encrypted root partition fails instantly</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/6478" rel="external">#6478: `systemctl` should not consider active->failed as a successful operation</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/6620" rel="external">#6620: services writing to stdout become silent after journal restart</a></li>
+                    <li><a href="https://github.com/systemd/systemd/pull/7184" rel="external">#7184: resolved: fix loop on packets with pseudo dns types</a> (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15908" rel="external">CVE-2017-15908</a>)</li>
+                    <li><a href="https://github.com/systemd/systemd/issues/8579" rel="external">#8579: systemd breaks my mouse</a></li>
+                    <li><a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1795921" rel="external">Out-of-Bounds write in systemd-networkd dhcpv6 option handling</a> (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15688" rel="external">CVE-2018-15688</a>)</li>
+                    <li><a href="https://github.com/systemd/systemd/issues/6078#issuecomment-308240231" rel="external">#6078: Applying systemd-networkd configuration disconnects all other interfaces</a></li>
+                    <li><a href="https://www.openwall.com/lists/oss-security/2019/01/09/3" rel="external">System Down: A systemd-journald exploit (CVE-2018-16864, CVE-2018-16865, and CVE-2018-16866)</a></li>
+                    <li><a href="https://github.com/systemd/systemd/issues/11810#issuecomment-489727505" rel="external">#11810: Can't suspend again after suspending one time</a> (<a href="https://twitter.com/FiloSottile/status/1125840275346198529" rel="external">explanation why this is bad</a>)</li>
+                    <li><a href="https://bugs.freedesktop.org/show_bug.cgi?id=72759" rel="external">Systemd user manager interferes with ecryptfs - private directory not being unmounted</a> (also <a href="https://bugs.launchpad.net/ubuntu/+source/ecryptfs-utils/+bug/313812" rel="external">umount of ecryptfs does not automatically clear the keyring</a> and <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=765854" rel="external">ecryptfs-utils: Private directory not automatically unmounted anymore on logout</a>)</li>
+                    <li><a href="https://github.com/systemd/systemd/issues/2913" rel="external">#2913: journald is unable to attribute messages incoming from processes that exited to their cgroup, due to /proc vs SCM_CREDS race</a></li>
+                </ul>
+            </article>
 
-		<h2>How do I get rid of systemd?</h2>
-		<p style="font-weight: 600;">Free your system by replacing systemd with an alternative init system. Here are a few guides on how to do that:</p>
+            <article>
+                <h3>Other issues arising around systemd:</h3>
+                <ul role="list">
+                    <li><a href="https://github.com/systemd/systemd/pull/15206" rel="external">systemd will be able to kill a process if he needs/wants more RAM</a></li>
+                    <li><a href="https://lists.freedesktop.org/archives/systemd-devel/2010-September/000391.html" rel="external">We need to enforce the use of systemd to everyone, by the creator of systemd itself.</a></li>
+                    <li><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=825394" rel="external">systemd kills background processes after user logs out</a> (see also: <a href="https://github.com/tmux/tmux/issues/428" rel="external">[RFE] add a way to run in a new systemd scope automatically</a>)</li>
+                    <li><a href="https://www.theregister.co.uk/2017/06/29/systemd_pwned_by_dns_query/" rel="external">Don't panic, but Linux's Systemd can be pwned via an evil DNS query</a></li>
+                    <li><a href="https://isc.sans.edu/forums/diary/Systemd+Could+Fallback+to+Google+DNS/22516/" rel="external">Systemd Could Fallback to Google DNS?</a></li>
+                    <li><a href="https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1713457" rel="external">DNS search domain not removed from resolv.conf on disconnect</a></li>
+                    <li><a href="https://fredrikaverpil.github.io/blog/2016/04/27/systemd-services-and-resource-limits/" rel="external">systemd does not respect system wide resource limits</a></li>
+                </ul>
+            </article>
+        </section>
 
-		<ul>
-			<li><a href="https://wiki.ubuntu.com/SystemdForUpstartUsers#Permanent_switch_back_to_upstart">Ubuntu Wiki: Permanent switch back to upstart</a></li>
-			<li><a href="https://wiki.debian.org/Init#Changing_the_init_system_-_at_installation_time">Debian Wiki: Changing the init system</a></li>
-		</ul>
+        <section id="alternatives">
+            <h2>How do I get rid of systemd?</h2>
+            
+            <article>
+                <h3>Replace systemd with an alternative init system:</h3>
+                <ul role="list">
+                    <li><a href="https://wiki.ubuntu.com/SystemdForUpstartUsers#Permanent_switch_back_to_upstart" rel="external">Ubuntu Wiki: Permanent switch back to upstart</a></li>
+                    <li><a href="https://wiki.debian.org/Init#Changing_the_init_system_-_at_installation_time" rel="external">Debian Wiki: Changing the init system</a></li>
+                </ul>
+            </article>
 
-		<p>&dash; Alternatively you can use Linux distributions which do not use systemd by default:</p>
+            <article>
+                <h3>Linux distributions without systemd:</h3>
+                <p>Alternatively you can use Linux distributions which do not use systemd by default:</p>
 
-		<ul class="distros">
-			<li><a href="https://devuan.org/"><img src="img/devuan.png" alt="Devuan" /></a></li>
-			<li><a href="https://voidlinux.org/"><img src="img/void.png" alt="Void" /></a></li>
-			<li><a href="https://artixlinux.org/"><img src="img/artix.png" alt="Artix" /></a></li>
-			<li><a href="https://guix.gnu.org/"><img src="img/guix.png" alt="Guix" /></a></li>
-			<li><a href="https://gentoo.org/"><img src="img/gentoo.png" alt="Gentoo" /></a></li>
-			<li><a href="https://www.funtoo.org/"><img src="img/funtoo.png" alt="Funtoo" /></a></li>
-			<li><a href="https://loc-os.com/"><img src="img/loc-os.svg" alt="Loc-OS" /></a></li>
-			<li><a href="https://www.alpinelinux.org/"><img src="img/alpine.png" alt="Alpine" /></a></li>
-			<li><a href="https://www.slackware.com/"><img src="img/slackware.png" alt="Slackware" /></a></li>
-			<li><a href="https://antixlinux.com/"><img src="img/antixlinux.png" alt="antiX" /></a></li>
-			<li><a href="https://venomlinux.org/"><img src="img/venomlinux.png" alt="Venom" /></a></li>
-			<li><a href="https://www.pclinuxos.com/"><img src="img/pclinuxos.png" alt="PcLinuxOS" /></a></li>
-			<li><a href="https://www.gobolinux.org/"><img src="img/gobolinux.png" alt="Gobo Linux" /></a></li>
-			<li><a href="https://web.obarun.org/"><img src="img/oberun.png" alt="Oberun" /></a></li>
-			<li><a href="https://kisslinux.org"><img src="img/kiss.png" alt="KISS Linux" /></a></li>
-			<li><a href="https://liguros.gitlab.io/"><img src="img/liguros_200x200.png" alt="LiGurOS" /></a></li>
-			<li><a href="https://sulinos.github.io"><img src="img/sulinos.svg" alt="SulinOS" /></a></li>
-			<li><a href="https://crux.nu"><img src="img/crux.png" alt="Crux" /></a></li>
-			<li><a href="https://dragora.org"><img src="img/dragora.png" alt="Dragora" /></a></li>
-			<li><a href="https://glaucuslinux.org/"><img src="img/glaucus.svg" alt="glaucus" /></a></li>
-			<li><a href="https://hyperbola.info"><img src="img/hyperbola.png" alt="Hyperbola" /></a></li>
-			<li><a href="https://nutyx.org"><img src="img/nutyx.png" alt="NuTyX" /></a></li>
-			<li><a href="https://parabola.nu"><img src="img/parabola.png" alt="Parabola" /></a></li>
-			<li><a href="https://slitaz.org/"><img src="img/slitaz-spider.svg" alt="SliTaz" /></a></li>
-			<li><a href="https://puffos.github.io"><img src="img/puff.png" alt="PuffOS" /></a></li>
-			<li><a href="http://www.tinycorelinux.net/"><img src="img/tinycorelinux.png" alt="Tiny Core Linux" /></a></li>
-			<li><a href="https://chimera-linux.org/"><img src="img/chimera.png" alt="Chimera Linux" /></a></li>
-			<li><a href="https://nxos.org/"><img src="img/nitrux.png" alt="Nitrux" /></a></li>
-			<li><a href="https://peppermintos.org/"><img src="img/peppermint.svg" alt="Peppermint OS" /></a></li>
-			<li><a href="https://mxlinux.org/"><img src="img/mx.png" alt="MX Linux" /></a></li>
-			<li><a href="https://www.openwrt.org/"><img src="img/openwrt.png" alt="OpenWrt" /></a></li>
-		</ul>
+                <ul class="distros" role="list" aria-label="Linux distributions without systemd">
+                    <li><a href="https://devuan.org/" rel="external" aria-label="Devuan Linux"><img src="img/devuan.png" alt="Devuan logo" width="80" height="80" /></a></li>
+                    <li><a href="https://voidlinux.org/" rel="external" aria-label="Void Linux"><img src="img/void.png" alt="Void Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://artixlinux.org/" rel="external" aria-label="Artix Linux"><img src="img/artix.png" alt="Artix Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://guix.gnu.org/" rel="external" aria-label="GNU Guix"><img src="img/guix.png" alt="GNU Guix logo" width="80" height="80" /></a></li>
+                    <li><a href="https://gentoo.org/" rel="external" aria-label="Gentoo Linux"><img src="img/gentoo.png" alt="Gentoo Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.funtoo.org/" rel="external" aria-label="Funtoo Linux"><img src="img/funtoo.png" alt="Funtoo Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://loc-os.com/" rel="external" aria-label="Loc-OS"><img src="img/loc-os.svg" alt="Loc-OS logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.alpinelinux.org/" rel="external" aria-label="Alpine Linux"><img src="img/alpine.png" alt="Alpine Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.slackware.com/" rel="external" aria-label="Slackware Linux"><img src="img/slackware.png" alt="Slackware Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://antixlinux.com/" rel="external" aria-label="antiX Linux"><img src="img/antixlinux.png" alt="antiX Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://venomlinux.org/" rel="external" aria-label="Venom Linux"><img src="img/venomlinux.png" alt="Venom Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.pclinuxos.com/" rel="external" aria-label="PCLinuxOS"><img src="img/pclinuxos.png" alt="PCLinuxOS logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.gobolinux.org/" rel="external" aria-label="GoboLinux"><img src="img/gobolinux.png" alt="GoboLinux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://web.obarun.org/" rel="external" aria-label="Obarun Linux"><img src="img/oberun.png" alt="Obarun Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://kisslinux.org" rel="external" aria-label="KISS Linux"><img src="img/kiss.png" alt="KISS Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://liguros.gitlab.io/" rel="external" aria-label="LiGurOS"><img src="img/liguros_200x200.png" alt="LiGurOS logo" width="80" height="80" /></a></li>
+                    <li><a href="https://sulinos.github.io" rel="external" aria-label="SulinOS"><img src="img/sulinos.svg" alt="SulinOS logo" width="80" height="80" /></a></li>
+                    <li><a href="https://crux.nu" rel="external" aria-label="CRUX Linux"><img src="img/crux.png" alt="CRUX Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://dragora.org" rel="external" aria-label="Dragora GNU/Linux"><img src="img/dragora.png" alt="Dragora GNU/Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://glaucuslinux.org/" rel="external" aria-label="glaucus Linux"><img src="img/glaucus.svg" alt="glaucus Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://hyperbola.info" rel="external" aria-label="Hyperbola GNU/Linux"><img src="img/hyperbola.png" alt="Hyperbola GNU/Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://nutyx.org" rel="external" aria-label="NuTyX Linux"><img src="img/nutyx.png" alt="NuTyX Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://parabola.nu" rel="external" aria-label="Parabola GNU/Linux"><img src="img/parabola.png" alt="Parabola GNU/Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://slitaz.org/" rel="external" aria-label="SliTaz GNU/Linux"><img src="img/slitaz-spider.svg" alt="SliTaz GNU/Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://puffos.github.io" rel="external" aria-label="PuffOS"><img src="img/puff.png" alt="PuffOS logo" width="80" height="80" /></a></li>
+                    <li><a href="http://www.tinycorelinux.net/" rel="external" aria-label="Tiny Core Linux"><img src="img/tinycorelinux.png" alt="Tiny Core Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://chimera-linux.org/" rel="external" aria-label="Chimera Linux"><img src="img/chimera.png" alt="Chimera Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://nxos.org/" rel="external" aria-label="Nitrux"><img src="img/nitrux.png" alt="Nitrux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://peppermintos.org/" rel="external" aria-label="Peppermint OS"><img src="img/peppermint.svg" alt="Peppermint OS logo" width="80" height="80" /></a></li>
+                    <li><a href="https://mxlinux.org/" rel="external" aria-label="MX Linux"><img src="img/mx.png" alt="MX Linux logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.openwrt.org/" rel="external" aria-label="OpenWrt"><img src="img/openwrt.png" alt="OpenWrt logo" width="80" height="80" /></a></li>
+                </ul>
 
-		<p>A good summary about most of the beforementioned distributions can be found <a href="https://ungleich.ch/en-us/cms/blog/2019/05/20/linux-distros-without-systemd/">here</a>.</p>
+                <p>A good summary about most of the beforementioned distributions can be found <a href="https://ungleich.ch/en-us/cms/blog/2019/05/20/linux-distros-without-systemd/" rel="external">here</a>.</p>
+            </article>
 
-		<p>You can also consider changing to BSD derivates:</p>
+            <article>
+                <h3>BSD alternatives:</h3>
+                <p>You can also consider changing to BSD derivatives:</p>
 
-		<ul class="distros">
-			<li><a href="https://www.freebsd.org/"><img src="img/freebsd.png" alt="FreeBSD" /></a></li>
-			<li><a href="https://www.netbsd.org/"><img src="img/netbsd.png" alt="NetBSD" /></a></li>
-			<li><a href="https://www.openbsd.org/"><img src="img/openbsd.png" alt="OpenBSD" /></a></li>
-			<li><a href="https://www.dragonflybsd.org/"><img src="img/dragonfly_bsd.png" alt="DragonFly BSD" /></a></li>
-			<li><a href="https://www.ghostbsd.org/"><img src="img/ghostbsd.png" alt="GhostBSD" /></a></li>
-			<li><a href="https://www.midnightbsd.org/"><img src="img/midnightbsd.png" alt="MidnightBSD" /></a></li>
-		</ul>
+                <ul class="distros" role="list" aria-label="BSD operating systems">
+                    <li><a href="https://www.freebsd.org/" rel="external" aria-label="FreeBSD"><img src="img/freebsd.png" alt="FreeBSD logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.netbsd.org/" rel="external" aria-label="NetBSD"><img src="img/netbsd.png" alt="NetBSD logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.openbsd.org/" rel="external" aria-label="OpenBSD"><img src="img/openbsd.png" alt="OpenBSD logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.dragonflybsd.org/" rel="external" aria-label="DragonFly BSD"><img src="img/dragonfly_bsd.png" alt="DragonFly BSD logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.ghostbsd.org/" rel="external" aria-label="GhostBSD"><img src="img/ghostbsd.png" alt="GhostBSD logo" width="80" height="80" /></a></li>
+                    <li><a href="https://www.midnightbsd.org/" rel="external" aria-label="MidnightBSD"><img src="img/midnightbsd.png" alt="MidnightBSD logo" width="80" height="80" /></a></li>
+                </ul>
+            </article>
+        </section>
 
-		<h2>Useful links</h2>
-		<ul>
-			<li><a href="https://the-world-after-systemd.ungleich.ch/">The world after systemd</a></li>
-			<li><a href="https://ihatesystemd.com/">I Hate Systemd</a></li>
-			<li><a href="https://distrowatch.com/search.php?ostype=All&category=All&origin=All&basedon=All&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=Not+systemd&status=Active#simple">Search for distributions without systemd on DistroWatch.com</a></li>
-			<li><a href="http://suckless.org/sucks/systemd">suckless.org on systemd</a></li>
-			<li><a href="http://ewontfix.com/14/">Broken by design: systemd</a></li>
-			<li><a href="https://sysdfree.wordpress.com/">systemd-free linux community</a></li>
-			<li><a href="https://twitter.com/systemdsucks">Twitter Account @systemdsucks</a></li>
-		</ul>
+        <section id="resources">
+            <h2>Useful links</h2>
+            <ul role="list">
+                <li><a href="https://the-world-after-systemd.ungleich.ch/" rel="external">The world after systemd</a></li>
+                <li><a href="https://ihatesystemd.com/" rel="external">I Hate Systemd</a></li>
+                <li><a href="https://distrowatch.com/search.php?ostype=All&category=All&origin=All&basedon=All&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=Not+systemd&status=Active#simple" rel="external">Search for distributions without systemd on DistroWatch.com</a></li>
+                <li><a href="http://suckless.org/sucks/systemd" rel="external">suckless.org on systemd</a></li>
+                <li><a href="http://ewontfix.com/14/" rel="external">Broken by design: systemd</a></li>
+                <li><a href="https://sysdfree.wordpress.com/" rel="external">systemd-free linux community</a></li>
+                <li><a href="https://twitter.com/systemdsucks" rel="external">Twitter Account @systemdsucks</a></li>
+            </ul>
+        </section>
+    </main>
 
-		<h2>Want to help?</h2>
-		<p>This website is Open Source. You can help to improve it by contributing to the Git repository hosted on Github: <a href="https://github.com/muellermartin/nosystemd.org">muellermartin/nosystemd.org</a>.</p>
-	</body>
+    <footer>
+        <section id="contribute">
+            <h2>Want to help?</h2>
+            <p>This website is Open Source. You can help to improve it by contributing to the Git repository hosted on Github: <a href="https://github.com/muellermartin/nosystemd.org" rel="external">muellermartin/nosystemd.org</a>.</p>
+        </section>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0, 
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
 </html>

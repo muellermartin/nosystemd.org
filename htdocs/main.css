@@ -1,43 +1,844 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Main container */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Typography */
 h1 {
-	text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
 }
 
-blockquote {
-	font-style: italic;
-	text-align: center;
-	font-weight: 600;
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 3rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #e74c3c;
+    position: relative;
 }
 
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+}
+
+/* Logo section */
 .logo {
-	text-align: center;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+  
+   
+   
+    
 }
 
 .logo img {
-	height: 128px;
+    max-width: 200px;
+    height: auto;
+   
+    transition: transform 0.3s ease;
 }
-abbr{
-	text-decoration: underline;
+
+.logo img:hover {
+    transform: scale(1.05) rotate(2deg);
 }
+
+/* Blockquote */
+blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    background: rgba(52, 152, 219, 0.1);
+    border-left: 5px solid #3498db;
+    border-radius: 10px;
+    position: relative;
+}
+
+blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #3498db;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: Georgia, serif;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+/* Lists */
+ul {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    position: relative;
+}
+
+li::marker {
+    color: #e74c3c;
+}
+
+/* Strikethrough for systemd */
+.strike {
+    text-decoration: line-through;
+    color: #e74c3c;
+    font-weight: bold;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+a:hover {
+    color: #2980b9;
+    text-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Distribution logos grid */
 .distros {
-	padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .distros li {
-	display: inline-block;
-	list-style-type: none;
-	padding: 1em;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
-.distros li a img {
-	height: 64px;
-	line-height: 64px;
-	vertical-align: middle;
+.distros li:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
 }
 
+.distros img {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.distros li:hover img {
+    transform: scale(1.1);
+}
+
+/* Abbreviations */
+abbr {
+    border-bottom: 2px dotted #3498db;
+    cursor: help;
+    text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .distros {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+    
+    .distros li {
+        padding: 1rem;
+    }
+    
+    .distros img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+    
+    blockquote {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+    
+    p, li {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .distros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    blockquote::before {
+        font-size: 3rem;
+        top: -5px;
+        left: 15px;
+    }
+}
+
+/* Special styling for font weight 600 paragraphs */
+p[style*="font-weight: 600"] {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+nav {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    background: rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 15px;
+    border: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sections and articles */
+section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Typography */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 3rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #e74c3c;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+}
+
+/* Logo section */
+.logo {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Blockquote */
+blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 600px;
+    background: rgba(52, 152, 219, 0.1);
+    border-left: 5px solid #3498db;
+    border-radius: 10px;
+    position: relative;
+}
+
+blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #3498db;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: Georgia, serif;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+/* Lists */
+ul {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    position: relative;
+}
+
+li::marker {
+    color: #e74c3c;
+}
+
+/* Strikethrough for systemd */
 .strike {
-	text-decoration: line-through;
+    text-decoration: line-through;
+    color: #e74c3c;
+    font-weight: bold;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+a:hover {
+    color: #2980b9;
+    text-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Distribution logos grid */
+.distros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.distros li {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.distros li:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.distros img {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.distros li:hover img {
+    transform: scale(1.1);
+}
+
+/* Abbreviations */
+abbr {
+    border-bottom: 2px dotted #3498db;
+    cursor: help;
+    text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .distros {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+    
+    .distros li {
+        padding: 1rem;
+    }
+    
+    .distros img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+    
+    blockquote {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+    
+    p, li {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .distros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    blockquote::before {
+        font-size: 3rem;
+        top: -5px;
+        left: 15px;
+    }
+}
+
+/* Special styling for font weight 600 paragraphs */
+p[style*="font-weight: 600"] {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+nav {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    background: rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 15px;
+    border: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sections and articles */
+section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+/* Footer */
+footer {
+    max-width: 1200px;
+    margin: 4rem auto 0 auto;
+    padding: 2rem;
+    
+    border-radius: 20px;
+    
+    text-align: center;
+}
+
+footer h2 {
+    color: #2c3e50;
+    border-bottom-color: #e74c3c;
+}
+
+footer a {
+    color: #3498db;
+}
+
+footer a:hover {
+    color: #2980b9;
+}
+
+
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    z-index: 1000;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+/* Print styles */
+@media  print {
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    h1, h2 {
+        color: black;
+    }
+    
+    .logo {
+        background: none;
+        box-shadow: none;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .distros {
+        display: block;
+    }
+    
+    .distros li {
+        display: inline-block;
+        margin: 0.5rem;
+        background: none;
+        box-shadow: none;
+    }
 }
